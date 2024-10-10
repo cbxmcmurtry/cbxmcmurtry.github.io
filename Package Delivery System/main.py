@@ -19,7 +19,7 @@ def load_address_file(file_name):
             addresses[index] = f"{name}, {address}"
     return addresses
 
-# Function to load package data from the package file into a hash table.
+# Function to load package data from the package file into a hash table
 def load_package_file(file_name):
     packages = HashTable()
     with open(file_name, 'r') as file:
