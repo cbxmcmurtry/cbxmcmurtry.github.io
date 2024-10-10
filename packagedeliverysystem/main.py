@@ -11,7 +11,7 @@ def load_address_file(file_name):
     addresses = {}
     with open(file_name, 'r') as file:
         for line in file:
-            # Split the line by commas to extract index, name, and address
+            # Splits the line with commas to get index, name, and address
             parts = line.strip().split(',')
             index = int(parts[0])
             name = parts[1]
@@ -34,20 +34,20 @@ def load_package_file(file_name):
                 'deadline': row[5],
                 'weight': row[6],
                 'note': row[7] if len(row) > 7 else '',
-                'status': 'at hub',  # Initial status is set to 'at hub'
+                'status': 'at hub',  # Starting status is set to 'at hub'
                 'delivery_time': None,
                 'truck_number': None,
             }
             packages.insert(package_id, package_data)
     return packages
 
-# Function to load distances from the distance file into a list of lists (matrix).
+# Function to load distances from the distance file into a matrix.
 def load_distance_file(file_name):
     distances = []
     with open(file_name, 'r') as file:
         reader = csv.reader(file)
         for row in reader:
-            # Convert each value to float (use 0.0 if empty) and append to the list
+            # Convert each value to float.
             distances.append([float(x) if x else 0.0 for x in row])
     return distances
 
@@ -60,7 +60,7 @@ class Truck:
         self.miles_traveled = 0.0
         self.time = datetime.strptime('08:00 AM', '%I:%M %p')  # Start time
 
-    # Method to load a package onto the truck and assign truck number.
+    # Method to load a package onto the truck and assign truck numbers.
     def load_package(self, package_id):
         self.packages.append(package_id)
         package_data = packages.lookup(package_id)
@@ -89,7 +89,7 @@ def get_nearest_location(current_location, remaining_locations, distances):
     nearest_location = None
     shortest_distance = float('inf')
 
-    # Iterate over remaining locations to find the closest one
+    # Check remaining locations to find the closest one.
     for location in remaining_locations:
         if current_location >= len(distances) or location >= len(distances[current_location]):
             continue
@@ -101,7 +101,7 @@ def get_nearest_location(current_location, remaining_locations, distances):
 
     return nearest_location, shortest_distance
 
-# Function to optimize the delivery route for a truck.
+# Function to optimize the delivery route.
 def optimize_route(truck, distances, packages):
     remaining_packages = truck.packages[:]
     current_location = truck.current_location
@@ -117,7 +117,7 @@ def optimize_route(truck, distances, packages):
             package_data = packages.lookup(pkg_id)
             package_address = package_data['address'].strip()
 
-            # Find the corresponding address index in the address list
+            # Find the matching address index in the address list
             destination_address_index = None
             for index, address in addresses.items():
                 if package_address in address:
@@ -169,7 +169,7 @@ def deliver_all_packages(trucks, packages, distances):
 
             nearest_location, distance = get_nearest_location(current_location, [destination_address_index], distances)
 
-            # Ensure that mileage does not exceed the truck's mileage limit (140 miles)
+            # Check for the truck's mileage limit (140 miles)
             if total_miles_traveled + distance > 140:
                 break
 
@@ -177,7 +177,7 @@ def deliver_all_packages(trucks, packages, distances):
             truck.deliver_package(package_id, truck.time.strftime('%I:%M %p'))
             total_miles_traveled += distance
 
-# Function to create a map with markers for all packages' locations.
+# Function to create a map with markers for all package locations.
 def create_map(packages):
     map_file = 'package_map.html'
     delivery_map = folium.Map(location=[40.7608, -111.8910], zoom_start=13)
@@ -202,13 +202,13 @@ if __name__ == '__main__':
     packages = load_package_file('package file')
     distances = load_distance_file('distance file')
 
-    # Initialize trucks
+    # Set up trucks
     truck1 = Truck(1)
     truck2 = Truck(2)
     truck3 = Truck(3)
     trucks = [truck1, truck2, truck3]
 
-    # Load packages onto trucks based on notes and availability
+    # Load packages onto trucks based on delivery notes and availability
     for package_id in range(1, 41):
         package_data = packages.lookup(package_id)
         if package_data:
@@ -225,11 +225,11 @@ if __name__ == '__main__':
                 else:
                     truck3.load_package(package_id)
 
-    # Generate the map and save it
+    # Generate and save the map
     create_map(packages)
 
-    # Simulate the delivery process for all trucks
+    # Delivery simulation
     deliver_all_packages(trucks, packages, distances)
 
-    # Launch the GUI
+    # GUI launch
     run_gui(packages, trucks)
