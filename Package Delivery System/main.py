@@ -6,7 +6,7 @@ from geocode import get_coordinates
 import folium
 import os
 
-# Function to load address data from the address file.
+# Function to load address data from the address file
 def load_address_file(file_name):
     addresses = {}
     with open(file_name, 'r') as file:
