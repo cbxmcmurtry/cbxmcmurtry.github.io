@@ -12,15 +12,15 @@ class PackageDeliveryApp(tk.Tk):
         self.packages = packages
         self.trucks = trucks
 
-        # Add "See Map" button
+        # Add See Map button
         self.map_button = ttk.Button(self, text="See Map", command=self.open_map)
         self.map_button.grid(row=4, column=0, columnspan=5, padx=10, pady=10)
 
-        # Configure grid layout
+        # Grid layout
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(4, weight=1)
 
-        # Package ID lookup section
+        # Package ID lookup
         self.label = ttk.Label(self, text="Enter Package ID:")
         self.label.grid(row=0, column=0, padx=10, pady=10, sticky="w")
 
@@ -48,11 +48,11 @@ class PackageDeliveryApp(tk.Tk):
         self.total_miles_label = ttk.Label(self.summary_frame, text="Total Miles Traveled: 0.0")
         self.total_miles_label.grid(row=0, column=1, padx=10)
 
-        # Result label for displaying lookup results
+        # Result label for lookup results
         self.result_label = ttk.Label(self, text="", wraplength=800)
         self.result_label.grid(row=2, column=0, columnspan=5, padx=10, pady=10)
 
-        # Treeview for displaying all packages
+        # Treeview
         self.tree = ttk.Treeview(self, columns=("ID", "Address", "City", "State", "ZIP", "Deadline",
                                                 "Weight", "Status", "Truck", "Delivery Time"), show='headings', height=15)
         self.tree.heading("ID", text="Package ID")
@@ -80,7 +80,7 @@ class PackageDeliveryApp(tk.Tk):
 
         self.tree.grid(row=3, column=0, columnspan=5, padx=10, pady=10, sticky='nsew')
 
-        # Initialize and display all packages and summary
+        # Set up and display all packages and summary
         self.update_summary()
         self.display_all_packages()
 
@@ -102,7 +102,7 @@ class PackageDeliveryApp(tk.Tk):
                     f"Truck Number: {package_data['truck_number']}\n"
                 )
                 self.result_label.config(text=result_text)
-                # Call show_coordinates function with the retrieved address and coordinates if you have them
+                # Call show_coordinates function with the retrieved address and coordinates
                 # show_coordinates(package_data['address'], lat, lng)
             else:
                 self.result_label.config(text="Package not found.")

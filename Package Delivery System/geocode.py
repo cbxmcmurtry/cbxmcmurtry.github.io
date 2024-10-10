@@ -69,7 +69,6 @@ def show_coordinates(address, lat, lng):
     root.mainloop()
 
 
-# Sample data as a list of dictionaries
 data = [
     {"id": 0, "name": "Western Governors University", "address": "4001 South 700 East"},
     {"id": 1, "name": "International Peace Gardens", "address": "1060 Dalton Ave S"},
@@ -114,20 +113,20 @@ data = [
     {"id": 40, "name": "177 W Price Ave", "address": "177 W Price Ave, Salt Lake City, UT"}
 ]
 
-# Convert list of dictionaries to a DataFrame
+# Convert list of dictionaries to dataframe
 df = pd.DataFrame(data)
 
-# Get coordinates for each address
+# coordinates for each address
 df['latitude'], df['longitude'] = zip(*df['address'].apply(get_coordinates))
 
-# Filter out rows where coordinates are None
+# filter out rows where coordinates are none
 df_valid = df.dropna(subset=['latitude', 'longitude'])
 
-# Save the updated DataFrame to a new CSV
+# Save the updated dataframe to new CSV
 output_file = 'locations_with_coordinates.csv'
 df_valid.to_csv(output_file, index=False)
 
-# Confirm file creation
+# check file creation
 print(f"CSV file '{output_file}' created successfully with {len(df_valid)} entries.")
 if __name__ == "__main__":
     lat, lng = get_coordinates("2530 S 500 E")
