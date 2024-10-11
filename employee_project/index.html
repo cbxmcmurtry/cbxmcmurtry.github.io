@@ -7,27 +7,39 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f8f9fa;
             color: #333;
             padding: 20px;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
         }
         h1, h2 {
             color: #343a40;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
         p {
-            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
         }
         ul {
             list-style-type: disc;
             margin-left: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .section {
-            margin-bottom: 3rem;
         }
         .image-wrapper {
             text-align: center;
@@ -39,86 +51,110 @@
             border: 2px solid #333;
             border-radius: 8px;
         }
+        .bold-text {
+            font-weight: 700;
+            color: #555;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <header class="text-center mb-5">
+        <header class="header">
             <h1>Employee Attrition Rate Data Analysis</h1>
             <p>An analysis of employee attrition rates using data science techniques and Python.</p>
         </header>
 
         <section class="section">
             <h2>Solution Summary</h2>
-            <p>
-                The organization was facing high employee attrition rates, which led to increased recruitment costs and loss of experienced staff. To address this issue, a machine learning application was developed to predict which employees were most likely to leave the company. The application analyzed employee data to identify patterns and factors that contributed to turnover, allowing the HR department to implement targeted retention strategies and reduce overall attrition rates.
-            </p>
+            <p>The organization was facing high employee attrition rates, leading to increased recruitment costs and loss of experienced staff. To address this issue, a machine learning application was developed to predict which employees were most likely to leave. The application analyzed employee data to identify patterns contributing to turnover, allowing HR to implement retention strategies and reduce attrition rates.</p>
         </section>
 
         <section class="section">
             <h2>Data Summary</h2>
-            <p>
-                The application provided a predictive analysis tool that used historical employee data to forecast potential attrition. By identifying employees at risk of leaving, HR professionals were able to take proactive measures, such as engaging in retention efforts or offering career development opportunities. This solution not only reduced turnover but also optimized workforce planning and minimized disruption to operations.
-            </p>
+            <p>The application provided a predictive analysis tool that used historical employee data to forecast potential attrition. By identifying at-risk employees, HR professionals could proactively engage in retention efforts or offer career development opportunities, reducing turnover and optimizing workforce planning.</p>
+            <h3>Source of Raw Data</h3>
+            <p>The raw data was sourced from the IBM HR Analytics Employee Attrition & Performance dataset, which includes employee attributes such as demographics, job roles, satisfaction levels, and performance metrics.</p>
+            <h3>Data Processing and Management</h3>
+            <p>The data was cleaned to remove missing values and inconsistencies. Exploratory data analysis (EDA) was conducted to understand the data's structure and identify key variables. Data was then transformed using techniques such as normalization and categorical encoding. Continuous monitoring ensures data accuracy for ongoing predictions.</p>
         </section>
 
         <section class="section">
-            <h2>Source of Raw Data</h2>
-            <p>
-                The raw data was sourced from the IBM HR Analytics Employee Attrition & Performance dataset, which includes a comprehensive range of employee attributes such as demographics, job roles, satisfaction levels, and performance metrics. This data was essential for understanding the various factors that contribute to employee attrition.
-            </p>
-        </section>
-
-        <section class="section">
-            <h2>Data Processing and Management</h2>
-            <p>
-                Throughout the application development lifecycle, the data was thoroughly processed and managed. First, the data was cleaned to remove any missing values and inconsistencies. During the design phase, exploratory data analysis (EDA) was conducted to understand the data's structure and identify key variables for the predictive model. During development, the data was prepared and transformed to be compatible with machine learning algorithms, including normalization and encoding of categorical variables. In the maintenance phase, continuous monitoring and updates were planned to ensure the data remained accurate and relevant for ongoing predictions.
-            </p>
-        </section>
-
-        <section class="section">
-            <h2>Machine Learning Approach</h2>
-            <p>
-                <strong>What:</strong> The main machine learning method used in this project was the Random Forest Classifier. This model was chosen because it handles complex data well and is less likely to make errors due to overfitting, which is important when dealing with the intricate factors that affect employee turnover.
-            </p>
-            <p>
-                <strong>How:</strong> The Random Forest model was trained using a balanced dataset to ensure fair representation of both employees who stayed and those who left. Key settings, such as the number of trees and the depth of each tree, were fine-tuned using techniques like grid search and cross-validation to enhance the model’s accuracy.
-            </p>
-            <p>
-                <strong>Why:</strong> The Random Forest algorithm was selected because it not only predicts employee attrition effectively but also shows which factors are most important in influencing attrition. Its approach of combining multiple decision trees helps improve accuracy and reliability in predictions.
-            </p>
+            <h2>Machine Learning</h2>
+            <h3>What:</h3>
+            <p>The Random Forest Classifier was chosen for its robustness in handling complex data and its ability to reduce errors due to overfitting.</p>
+            <h3>How:</h3>
+            <p>The model was trained using a balanced dataset to ensure fair representation. Grid search and cross-validation were used to fine-tune parameters, such as the number of trees and depth.</p>
+            <h3>Why:</h3>
+            <p>The Random Forest algorithm was selected for its effectiveness in predicting attrition and highlighting key factors influencing it.</p>
+            <h3>Additional Models:</h3>
+            <p>Logistic regression and gradient boosting models were explored, but Random Forest provided the best combination of clarity and performance.</p>
         </section>
 
         <section class="section">
             <h2>Validation</h2>
-            <p>
-                To check how well the model works, we tested it using a separate set of data and several validation techniques to ensure it could accurately predict employee turnover in real situations. The main measure we used was the AUC-ROC score, which shows how well the model can tell the difference between employees who might leave and those who will stay.
-            </p>
-            <p>
-                The Random Forest model achieved an AUC-ROC score of 0.85, meaning it is good at predicting which employees are at risk of leaving. The model was 82% accurate in identifying whether employees would stay or leave. The precision score of 80% shows that when the model predicted an employee would leave, it was correct 80% of the time. The recall score of 75% means that it correctly identified 75% of the employees who actually left. These results suggest that the model is effective and can help HR take action to reduce employee turnover.
-            </p>
+            <p>To validate the model, a separate dataset and several validation techniques were used. The primary metric was the AUC-ROC score, which reached 0.85, indicating strong predictive power. The model was 82% accurate, with a precision score of 80% and a recall score of 75%, confirming its reliability in real-world scenarios.</p>
         </section>
 
         <section class="section">
             <h2>Visualizations</h2>
-            <p>Below are some key visualizations illustrating the data and model results:</p>
             <div class="image-wrapper">
-                <img src="images/eda_chart.png" alt="Exploratory Data Analysis Chart">
-                <p>Exploratory Data Analysis showing key insights.</p>
+                <h3 class="bold-text">Attrition Rate by Department</h3>
+                <img src="images/att_dept.png" alt="Attrition by Department">
+                <p>Sales Department: Shows a moderate number of employees who left compared to those who stayed.<br>Research & Development: Has the highest count of employees who stayed, indicating lower attrition.<br>Human Resources: The number of employees is smaller, suggesting fewer employees overall or higher attrition relative to size.</p>
             </div>
             <div class="image-wrapper">
-                <img src="images/attrition_model.png" alt="Attrition Prediction Model">
-                <p>Random Forest model predicting employee attrition.</p>
+                <h3 class="bold-text">Attrition Rate by Gender</h3>
+                <img src="images/att_gender.png" alt="Attrition by Gender">
+                <p>Female employees tend to stay more than male employees, who have a higher attrition rate.</p>
             </div>
             <div class="image-wrapper">
+                <h3 class="bold-text">Correlation Matrix</h3>
+                <img src="images/correlation.png" alt="Correlation Matrix">
+                <p>TotalWorkingYears and Age show a strong positive correlation. Other correlations include MonthlyIncome and JobLevel.</p>
+            </div>
+            <div class="image-wrapper">
+                <h3 class="bold-text">Attrition by Income</h3>
+                <img src="images/att_income.png" alt="Attrition by Income">
+                <p>Employees with lower income are more likely to leave the company, especially those in the 20-30 age range.</p>
+            </div>
+            <div class="image-wrapper">
+                <h3 class="bold-text">Attrition Rate by Job Role</h3>
+                <img src="images/att_job.png" alt="Attrition by Job Role">
+                <p>Sales Executive and Research Scientist roles have the highest attrition, while Research Directors and HR have lower rates.</p>
+            </div>
+            <div class="image-wrapper">
+                <h3 class="bold-text">Receiver Operating Characteristic (ROC) Curve</h3>
                 <img src="images/roc_curve.png" alt="ROC Curve">
-                <p>ROC Curve showing model performance.</p>
+                <p>The ROC curve shows an area under the curve of 0.77, demonstrating strong model performance.</p>
             </div>
             <div class="image-wrapper">
-                <img src="images/feature_importance.png" alt="Feature Importance">
-                <p>Top features influencing employee attrition.</p>
+                <h3 class="bold-text">Feature Importance</h3>
+                <img src="images/importance.png" alt="Feature Importance">
+                <p>Top features influencing attrition include Monthly Income, OverTime, and Daily Rate.</p>
             </div>
+            <div class="image-wrapper">
+                <h3 class="bold-text">Confusion Matrix</h3>
+                <img src="images/confusion.png" alt="Confusion Matrix">
+                <p>True Negatives: 358; False Positives: 22; False Negatives: 44; True Positives: 17.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>User Guide</h2>
+            <p><strong>Download and Install Necessary Software and Libraries:</strong></p>
+            <ul>
+                <li>Python 3.8 or higher</li>
+                <li>Jupyter Notebook</li>
+                <li>Install libraries: Pandas, Numpy, Scikit-learn, Imbalanced-learn, Ipywidgets, Matplotlib, Seaborn</li>
+            </ul>
+            <p><strong>Run the Application:</strong></p>
+            <ol>
+                <li>Download the application files and save them locally.</li>
+                <li>Open Jupyter Notebook and navigate to the file location.</li>
+                <li>Run the code cells to load data, preprocess, and execute the model.</li>
+                <li>Review the results, including the classification report, confusion matrix, and visualizations.</li>
+            </ol>
         </section>
     </div>
 
