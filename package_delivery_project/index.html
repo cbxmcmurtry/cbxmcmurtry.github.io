@@ -19,7 +19,7 @@
         .container {
             padding: 2rem;
         }
-        .project-description, .images-section, .features-section {
+        .project-description, .images-section, .features-section, .algorithm-section, .data-structure-section {
             margin-bottom: 2rem;
         }
         .image-wrapper {
@@ -37,7 +37,7 @@
 <body>
 
     <header class="header">
-        <h1>Package Delivery System Project</h1>
+        <h1>Package Delivery System</h1>
         <p>A demonstration of a package delivery simulation system using Python and Tkinter.</p>
     </header>
 
@@ -61,27 +61,32 @@
             </ul>
         </section>
 
+        <section class="algorithm-section">
+            <h2>Algorithm Used</h2>
+            <p>
+                I’m using the Greedy Algorithm - Nearest Neighbor for this project. This algorithm helps in finding the shortest possible route that visits each delivery location exactly once and returns to the hub if needed. It starts at the hub, then proceeds to the nearest package delivery location, and continues to the next nearest location until all packages are delivered. This approach reduces the total distance and ensures deliveries are made on time.
+            </p>
+        </section>
+
+        <section class="data-structure-section">
+            <h2>Data Structure Identification</h2>
+            <p>
+                I’m using a Hash Table to efficiently store and retrieve package information using unique keys, like a package ID. The Hash Table allows for constant-time average complexity for insertion, deletion, and search operations. Each package ID serves as the key, with the corresponding values containing details such as delivery address, deadline, special notes, and delivery status. This structure facilitates fast lookups when tracking the progress of each package and making routing decisions.
+            </p>
+        </section>
+
         <section class="images-section">
             <h2>Project Images</h2>
             <div class="row">
                 <div class="col-md-6 image-wrapper">
-                    <img src="images/gui_1.png" alt="Package Delivery System Screenshot 1">
+                    <img src="package_delivery_project/Images/gui_1.png" alt="Package Delivery System Screenshot 1">
                     <p>Package tracking interface showing real-time data.</p>
                 </div>
                 <div class="col-md-6 image-wrapper">
-                    <img src="images/map.png" alt="Package Delivery System Screenshot 2">
+                    <img src="package_delivery_project/Images/map.png" alt="Package Delivery System Screenshot 2">
                     <p>Map visualization with delivery routes.</p>
                 </div>
             </div>
-        </section>
-
-        <section class="demo-section">
-            <h2>Live Demo</h2>
-            <p>
-                Click the button below to interact with the live demo of the Package Delivery System.
-                Make sure you have all dependencies installed and run the system locally to see it in action.
-            </p>
-            <a class="btn btn-primary" href="demo/package_delivery_system_demo.html" role="button">View Live Demo</a>
         </section>
 
         <section class="download-section">
@@ -89,7 +94,7 @@
             <p>
                 You can download the project files and source code from the link below:
             </p>
-            <a class="btn btn-success" href="path/to/your/project.zip" role="button" download>Download Package Delivery System</a>
+            <a class="btn btn-success" href="package_delivery_project/project_files.zip" role="button" download>Download Package Delivery System</a>
         </section>
     </div>
 
