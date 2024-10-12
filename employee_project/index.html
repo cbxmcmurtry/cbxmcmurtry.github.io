@@ -126,12 +126,10 @@
         <h1>Employee Attrition Rate Data Analysis</h1>
         <p>An analysis of employee attrition rates using data science techniques and Python.</p>
     </div>
-
     <section class="section">
         <h2>Solution Summary</h2>
         <p>The organization was facing high employee attrition rates, leading to increased recruitment costs and loss of experienced staff. To address this issue, a machine learning application was developed to predict which employees were most likely to leave. The application analyzed employee data to identify patterns contributing to turnover, allowing HR to implement retention strategies and reduce attrition rates.</p>
     </section>
-
     <section class="section">
         <h2>Data Summary</h2>
         <p>The application provided a predictive analysis tool that used historical employee data to forecast potential attrition. By identifying at-risk employees, HR professionals could proactively engage in retention efforts or offer career development opportunities, reducing turnover and optimizing workforce planning.</p>
@@ -140,7 +138,6 @@
         <h3>Data Processing and Management</h3>
         <p>The data was cleaned to remove missing values and inconsistencies. Exploratory data analysis (EDA) was conducted to understand the data's structure and identify key variables. Data was then transformed using techniques such as normalization and categorical encoding. Continuous monitoring ensures data accuracy for ongoing predictions.</p>
     </section>
-
     <section class="section">
         <h2>Machine Learning</h2>
         <h3>What:</h3>
@@ -152,23 +149,18 @@
         <h3>Additional Models:</h3>
         <p>Logistic regression and gradient boosting models were explored, but Random Forest provided the best combination of clarity and performance.</p>
     </section>
-
     <!-- Content Section -->
-    <div class="content">
-        <h2>Analysis by Department</h2>
-        <p>The analysis by department shows that attrition varies significantly across different areas:</p>
-        <p><strong>Sales Department:</strong> This department shows a moderate number of employees who have left compared to those who stayed. It may indicate that the roles in sales have more pressure or turnover due to performance-based metrics. Identifying specific issues such as sales targets or workload could help reduce turnover.</p>
-        <p><strong>Research & Development:</strong> This department has the highest count of employees who stayed, indicating a potentially stable work environment and high job satisfaction. It suggests that employees in technical and research roles might have more fulfilling tasks or career development opportunities.</p>
-        <p><strong>Human Resources:</strong> The number of employees is smaller, suggesting fewer employees overall or potentially higher attrition relative to department size. HR may have unique challenges, such as managing other departments’ needs while also focusing on their own development and satisfaction.</p>
-
-        <h2>Correlation Matrix Insights</h2>
-        <p>The correlation matrix reveals several significant relationships within the dataset:</p>
-        <p><strong>TotalWorkingYears and Age:</strong> A strong positive correlation, which is expected since older employees typically have more working years. This relationship indicates tenure stability as employees age.</p>
-        <p><strong>MonthlyIncome and JobLevel:</strong> There is a very strong positive correlation between these variables, suggesting that higher job levels are associated with higher incomes.</p>
-        <p><strong>YearsWithCurrManager and YearsAtCompany:</strong> Employees who have spent more time with the company also tend to have longer tenures with their current manager, indicating stable managerial relationships.</p>
-        <p><strong>YearsSinceLastPromotion and PerformanceRating:</strong> Shows a weak negative correlation.</p>
-    </div>
-
+    <div class="image-wrapper">
+    <h3 class="bold-text">Correlation Matrix</h3>
+    <img src="images/correlation.png" alt="Correlation Matrix">
+    <p>The correlation matrix reveals several significant relationships within the dataset:</p>
+    <ul>
+        <li><strong>TotalWorkingYears and Age:</strong> A strong positive correlation, which is expected since older employees typically have more working years. This relationship indicates tenure stability as employees age.</li>
+        <li><strong>MonthlyIncome and JobLevel:</strong> There is a very strong positive correlation between these variables, suggesting that higher job levels are associated with higher incomes.</li>
+        <li><strong>YearsWithCurrManager and YearsAtCompany:</strong> Employees who have spent more time with the company also tend to have longer tenures with their current manager, indicating stable managerial relationships.</li>
+        <li><strong>YearsSinceLastPromotion and PerformanceRating:</strong> Shows a weak negative correlation.</li>
+    </ul>
+</div>
     <!-- Confusion Matrix Section -->
     <div class="confusion-matrix">
         <h2>Confusion Matrix</h2>
@@ -194,9 +186,6 @@
     </div>
 
     <!-- Additional Sections from Second Snippet -->
-
-
-
     <section class="section">
         <h2>Validation</h2>
         <p>To validate the model, a separate dataset and several validation techniques were used. The primary metric was the AUC-ROC score, which reached 0.85, indicating strong predictive power. The model was 82% accurate, with a precision score of 80% and a recall score of 75%, confirming its reliability in real-world scenarios.</p>
