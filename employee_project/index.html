@@ -5,122 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Attrition Rate Data Analysis</title>
     <style>
+        /* General body styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
-        /* Banner Styles */
-        .banner {
-            background-color: #3f51b5; /* Color for the banner */
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .banner h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        .banner p {
-            margin: 5px 0 0;
-            font-size: 1.2em;
-        }
-
-        /* Content Styles */
-        .content {
-            padding: 20px;
-            margin-left: 2in; /* Shift content to the right */
-        }
-
-        .content h2 {
-            font-size: 1.8em;
-            margin-bottom: 10px;
-        }
-
-        .content p {
-            font-size: 1em;
-            margin: 10px 0;
-        }
-
-        .content p strong {
-            font-weight: bold;
-        }
-
-        .validation,
-        .visualizations {
-            font-size: 1.5em; /* Smaller text for these sections */
-        }
-
-        /* Confusion Matrix Table Styles */
-        .confusion-matrix {
-            font-size: 1em;
-            margin-top: 20px;
-        }
-
-        .confusion-matrix h2 {
-            font-size: 1.8em;
-            margin-bottom: 10px;
-        }
-
-        .confusion-matrix p {
-            font-size: 1em;
-            margin: 10px 0;
-        }
-
-        table {
-            margin: 20px auto;
-            border-collapse: collapse;
-            width: 60%;
-        }
-
-        table, th, td {
-            border: 1px solid black;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        /* Styling for sections */
+        /* Adjust the spacing for section elements */
         .section {
-            padding: 20px;
-            margin-left: 2in; /* Keep consistency with other content */
+            padding: 10px 20px; /* Reduce padding */
+            margin-bottom: 10px; /* Reduce the margin between sections */
         }
 
         .section h2 {
-            font-size: 1.8em;
-            margin-bottom: 10px;
+            margin-bottom: 5px; /* Reduce space below section headers */
         }
 
         .section p {
-            font-size: 1em;
-            margin: 10px 0;
-        }
-
-        .section ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .image-wrapper {
-            margin: 20px 0;
-        }
-
-        .bold-text {
-            font-weight: bold;
+            margin-bottom: 5px; /* Reduce space below paragraphs */
         }
     </style>
 </head>
 <body>
+
     <!-- Banner Section -->
     <div class="banner">
         <h1>Employee Attrition Rate Data Analysis</h1>
