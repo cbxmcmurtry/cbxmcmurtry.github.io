@@ -5,52 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Attrition Rate Data Analysis</title>
     <style>
-        /* General body styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
-        /* Adjust the spacing for section elements */
+        /* Banner Styles */
+        .banner {
+            background-color: #3f51b5; /* Color for the banner */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .banner h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .banner p {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+        }
+
+        /* Content Styles */
+        .content {
+            padding: 20px;
+            margin-left: 2in; /* Shift content to the right */
+        }
+
+        .content h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        .content p strong {
+            font-weight: bold;
+        }
+
+        .validation,
+        .visualizations {
+            font-size: 1.5em; /* Smaller text for these sections */
+        }
+
+        /* Confusion Matrix Table Styles */
+        .confusion-matrix {
+            font-size: 1em;
+            margin-top: 20px;
+        }
+
+        .confusion-matrix h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .confusion-matrix p {
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Styling for sections */
         .section {
-            padding: 10px 20px; /* Reduce padding */
-            margin-bottom: 10px; /* Reduce the margin between sections */
+            padding: 20px;
+            margin-left: 2in; /* Keep consistency with other content */
         }
 
         .section h2 {
-            margin-bottom: 5px; /* Reduce space below section headers */
+            font-size: 1.8em;
+            margin-bottom: 10px;
         }
 
         .section p {
-            margin-bottom: 5px; /* Reduce space below paragraphs */
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        .section ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-wrapper {
+            margin: 20px 0;
+        }
+
+        .bold-text {
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-
     <!-- Banner Section -->
     <div class="banner">
         <h1>Employee Attrition Rate Data Analysis</h1>
         <p>An analysis of employee attrition rates using data science techniques and Python.</p>
     </div>
-    <!-- Solution Summary Section -->
     <section class="section">
         <h2>Solution Summary</h2>
-        <p>The organization was facing high employee attrition rates, leading to increased recruitment costs and loss of experienced staff. To address this issue, a machine learning application was developed to predict which employees were most likely to leave. The application analyzed employee data to identify patterns contributing to turnover, allowing HR to implement retention strategies and reduce attrition rates.</p>
+        <p>The organization was facing high employee attrition rates, which led to increased recruitment costs and loss of experienced staff. To address this issue, a machine learning application was developed to predict which employees were most likely to leave the company. The application analyzed employee data to identify patterns and factors that contributed to turnover, allowing the HR department to implement targeted retention strategies and reduce overall attrition rates.</p>
     </section>
-
-    <!-- Data Summary Section -->
     <section class="section">
         <h2>Data Summary</h2>
-        <p>The application provided a predictive analysis tool that used historical employee data to forecast potential attrition. By identifying at-risk employees, HR professionals could proactively engage in retention efforts or offer career development opportunities, reducing turnover and optimizing workforce planning.</p>
+        <p>The application provided a predictive analysis tool that used historical employee data to forecast potential attrition. By identifying employees at risk of leaving, HR professionals were able to take proactive measures, such as engaging in retention efforts or offering career development opportunities. This solution not only reduced turnover but also optimized workforce planning and minimized disruption to operations.</p>
         <h3>Source of Raw Data</h3>
         <p>The raw data was sourced from the IBM HR Analytics Employee Attrition & Performance dataset, which includes employee attributes such as demographics, job roles, satisfaction levels, and performance metrics.</p>
         <h3>Data Processing and Management</h3>
         <p>The data was cleaned to remove missing values and inconsistencies. Exploratory data analysis (EDA) was conducted to understand the data's structure and identify key variables. Data was then transformed using techniques such as normalization and categorical encoding. Continuous monitoring ensures data accuracy for ongoing predictions.</p>
     </section>
-
-    <!-- Machine Learning Section -->
     <section class="section">
         <h2>Machine Learning</h2>
         <h3>What:</h3>
@@ -62,9 +149,6 @@
         <h3>Additional Models:</h3>
         <p>Logistic regression and gradient boosting models were explored, but Random Forest provided the best combination of clarity and performance.</p>
     </section>
-
-</body>
-</html>
     <!-- Content Section -->
     <div class="image-wrapper">
     <h3 class="bold-text">Correlation Matrix</h3>
